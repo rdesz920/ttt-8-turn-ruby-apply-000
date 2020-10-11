@@ -36,24 +36,18 @@ def valid_move? (board,index)
   end
 
 end
-
-def turn(board)
-  puts "Please enter 1-9:"
-end
-
+# define method for move
 def move(board, index, character = "X")
   board[index] = character
-  return board
 end
-
-def turn (board)
+# define method for turn
+def turn(board)
   puts "Please enter 1-9:"
-  num = gets.chomp
-  index = input_to_index(num)
-  if valid_move?(board, index) == true
-    move(board, index)
-    display_board(board)
-  else
-    turn(board)
-  end
+  player_move = gets.chomp
+  input_to_index(player_move)
 end
+# get user input
+# calls input to index method
+# validate move
+# ask for input again if false
+# display board after valid move
